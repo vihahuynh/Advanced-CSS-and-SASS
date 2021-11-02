@@ -1,17 +1,35 @@
-[class^="col-"] {
-  float: left;
-  padding: 15px 0;
-  &:not(:last-child) {
-    margin-right: $gutter-horizontal;
-  }
-}
-
 .row {
   @include clearfix;
+
+  [class^="col-"] {
+    float: left;
+    padding: 15px 0;
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+      @include response(tab-port) {
+        margin-right: 0;
+      }
+    }
+
+    @include response(tab-port) {
+      width: 100% !important;
+    }
+  }
+
   max-width: $grid-width;
   margin: 0 auto;
+
+  @include response(tab-port) {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
+
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+    @include response(tab-port) {
+      width: 100%;
+      margin-bottom: $gutter-vertical-small;
+    }
   }
 
   .col-1-of-2 {

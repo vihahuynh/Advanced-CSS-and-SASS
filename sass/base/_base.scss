@@ -22,4 +22,7 @@ html {
 body {
   padding: 3rem;
   box-sizing: border-box;
+  @include response(phone) {
+    padding: 0;
+  }
 }

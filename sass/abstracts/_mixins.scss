@@ -21,6 +21,8 @@ QUERY MEDIA MANAGER
 //   }
 // }
 
+// ORDER: base + typoraphy → general layouts + grid → page layout → components
+
 @mixin response($breakpoint) {
   @if $breakpoint == phone {
     @media (max-width: 37.5em) {
