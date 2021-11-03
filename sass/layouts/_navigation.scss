@@ -99,6 +99,10 @@
         margin-right: 1.5rem;
         display: inline-block;
       }
+
+      @include response(phone) {
+        font-size: 2.5rem;
+      }
     }
 
     &:hover,
