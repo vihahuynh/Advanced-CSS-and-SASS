@@ -12,6 +12,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden;
@@ -59,10 +60,14 @@
   // FRONT SIDE STYLING
   &__picture {
     background-size: cover;
-    height: 23rem;
+    height: 19rem;
     background-blend-mode: screen;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      height: 23rem;
+    }
 
     &--1 {
       background-image: url(../img/nat-5.jpg),

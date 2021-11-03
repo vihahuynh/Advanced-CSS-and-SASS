@@ -14,16 +14,19 @@
     font-size: 6rem;
     margin-bottom: 5px;
     display: inline-block;
-    background-image: linear-gradient(
-      to right,
-      $color-primary-light,
-      $color-primary-dark
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: $color-primary;
     @include response(tab-port) {
       margin-bottom: 0;
+    }
+    @supports (background-clip: text) or (-webkit-background-clip: text) {
+      background-image: linear-gradient(
+        to right,
+        $color-primary-light,
+        $color-primary-dark
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
   }
 
